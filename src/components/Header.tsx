@@ -1,9 +1,9 @@
-
 import { Link } from "react-router-dom";
-import { Menu, X, Globe, Sun, Moon, User } from "lucide-react";
+import { Menu, X, Sun, Moon, User } from "lucide-react";
 import { useState } from "react";
 import { useApp } from "../contexts/AppContext";
 import { Button } from "../components/ui/button";
+import { LanguageSelector } from "./LanguageSelector";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
 } from "../components/ui/dropdown-menu";
 
 export const Header = () => {
-  const { translations, language, setLanguage, theme, setTheme, isAuthenticated, user, logout } = useApp();
+  const { translations, theme, setTheme, isAuthenticated, user, logout } = useApp();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -20,10 +20,6 @@ export const Header = () => {
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
-  };
-
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "km" : "en");
   };
 
   return (
@@ -54,9 +50,7 @@ export const Header = () => {
 
           {/* Desktop Controls */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="icon" onClick={toggleLanguage} title={language === "en" ? "Switch to Khmer" : "Switch to English"}>
-              <Globe size={20} />
-            </Button>
+            <LanguageSelector />
             
             <Button variant="ghost" size="icon" onClick={toggleTheme} title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}>
               {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
@@ -120,10 +114,7 @@ export const Header = () => {
               </Link>
               
               <div className="flex items-center space-x-4 pt-2">
-                <Button variant="ghost" size="icon" onClick={toggleLanguage}>
-                  <Globe size={20} />
-                  <span className="ml-2">{language === "en" ? "Khmer" : "English"}</span>
-                </Button>
+                <LanguageSelector />
                 
                 <Button variant="ghost" size="icon" onClick={toggleTheme}>
                   {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
