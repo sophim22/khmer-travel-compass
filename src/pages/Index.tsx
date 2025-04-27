@@ -1,8 +1,8 @@
-
 import { MainLayout } from "../layouts/MainLayout";
 import { HomeHero } from "../components/HomeHero";
 import { FeaturedDestinations } from "../components/FeaturedDestinations";
 import { useApp } from "../contexts/AppContext";
+import { QrCode } from "lucide-react";
 
 const Index = () => {
   const { language } = useApp();
@@ -95,6 +95,51 @@ const Index = () => {
                   ? "Remove shoes before entering temples and dress modestly." 
                   : "ដោះស្បែកជើងមុនពេលចូលវត្ត និងស្លៀកពាក់សមរម្យ។"}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Mobile App Download Section */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <QrCode className="w-12 h-12 mx-auto mb-4 text-cambodia-red" />
+            <h2 className="text-3xl font-bold mb-4">
+              {language === "en" ? "Get Our Mobile App" : "ទាញយកកម្មវិធីទូរស័ព្ទរបស់យើង"}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-8">
+              {language === "en" 
+                ? "Scan the QR code to download our app and explore Cambodia on the go!" 
+                : "ស្កេនកូដ QR ដើម្បីទាញយកកម្មវិធីរបស់យើង និងរុករកកម្ពុជាពេលធ្វើដំណើរ!"}
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              {/* App Store QR */}
+              <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold mb-4">
+                  {language === "en" ? "iOS App Store" : "កម្មវិធី iOS"}
+                </h3>
+                <div className="w-48 h-48 mx-auto bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center mb-4">
+                  <QrCode className="w-32 h-32 text-gray-400" />
+                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {language === "en" ? "Scan for iOS" : "ស្កេនសម្រាប់ iOS"}
+                </p>
+              </div>
+              
+              {/* Play Store QR */}
+              <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold mb-4">
+                  {language === "en" ? "Google Play Store" : "កម្មវិធី Android"}
+                </h3>
+                <div className="w-48 h-48 mx-auto bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center mb-4">
+                  <QrCode className="w-32 h-32 text-gray-400" />
+                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {language === "en" ? "Scan for Android" : "ស្កេនសម្រាប់ Android"}
+                </p>
+              </div>
             </div>
           </div>
         </div>
