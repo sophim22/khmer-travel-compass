@@ -4,6 +4,7 @@ import { MainLayout } from "../layouts/MainLayout";
 import { useApp } from "../contexts/AppContext";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
+import { FormInput } from "../components/FormInput";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Facebook, Lock, Phone, User } from "lucide-react";
 import { toast } from "../components/ui/use-toast";
@@ -134,7 +135,7 @@ const Register = () => {
                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                       {language === "en" ? "Full Name" : "ឈ្មោះពេញ"}
                     </label>
-                    <Input
+                    <FormInput
                       type="text"
                       placeholder={language === "en" ? "Enter your name" : "បញ្ចូលឈ្មោះរបស់អ្នក"}
                       value={name}
@@ -146,7 +147,7 @@ const Register = () => {
                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                       {language === "en" ? "Phone Number" : "លេខទូរស័ព្ទ"}
                     </label>
-                    <Input
+                    <FormInput
                       type="tel"
                       placeholder="+855"
                       value={phoneNumber}
@@ -158,7 +159,7 @@ const Register = () => {
                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                       {language === "en" ? "Password" : "ពាក្យសម្ងាត់"}
                     </label>
-                    <Input
+                    <FormInput
                       type="password"
                       placeholder={language === "en" ? "Create a password" : "បង្កើតពាក្យសម្ងាត់"}
                       value={password}
@@ -170,7 +171,7 @@ const Register = () => {
                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                       {language === "en" ? "Confirm Password" : "បញ្ជាក់ពាក្យសម្ងាត់"}
                     </label>
-                    <Input
+                    <FormInput
                       type="password"
                       placeholder={language === "en" ? "Confirm your password" : "បញ្ជាក់ពាក្យសម្ងាត់របស់អ្នក"}
                       value={confirmPassword}
