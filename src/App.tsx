@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/admin/Dashboard";
 import NotFound from "./pages/NotFound";
+import Accommodations from "./pages/Accommodations";
+import Transportation from "./pages/Transportation";
+import Activities from "./pages/Activities";
 
 // Protected route component
 const ProtectedRoute = ({ isAdmin = false, children }: { isAdmin?: boolean, children: JSX.Element }) => {
@@ -44,6 +46,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/accommodations" element={<Accommodations />} />
+            <Route path="/transportation" element={<Transportation />} />
+            <Route path="/activities" element={<Activities />} />
             
             {/* Admin Routes */}
             <Route 
@@ -55,7 +60,7 @@ const App = () => (
               } 
             />
             
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
