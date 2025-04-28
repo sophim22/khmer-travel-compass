@@ -1,6 +1,9 @@
+
 import { MainLayout } from "../layouts/MainLayout";
 import { HomeHero } from "../components/HomeHero";
 import { FeaturedDestinations } from "../components/FeaturedDestinations";
+import { Services } from "../components/Services";
+import { TravelerHistories } from "../components/TravelerHistories";
 import { useApp } from "../contexts/AppContext";
 import { QrCode } from "lucide-react";
 
@@ -11,6 +14,8 @@ const Index = () => {
     <MainLayout>
       <HomeHero />
       <FeaturedDestinations />
+      <Services />
+      <TravelerHistories />
       
       {/* Popular Experiences Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800">
