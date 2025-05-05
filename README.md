@@ -1,10 +1,4 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/d07324fb-1c17-4374-ac68-56dd517bc6d3
-
-## How can I edit this code?
+# Welcome Khmer Travel Compass
 
 There are several ways of editing your application.
 
